@@ -1,0 +1,17 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# App runtime state / scratch
+jphoto/data/
+jphoto/tmp/
+tmp/
+*.log
+state.json
+.jphoto_state.json
+
+# macOS
+.DS_Store

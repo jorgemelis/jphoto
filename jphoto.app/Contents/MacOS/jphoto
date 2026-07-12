@@ -1,0 +1,10 @@
+#!/bin/zsh
+# Relocatable launcher: resolve the repo root from this script's own location
+# (<repo>/jphoto.app/Contents/MacOS/jphoto) so the bundle works wherever the
+# repo is cloned. Prefer a local .venv, fall back to python3 on PATH.
+here="${0:A:h}"                 # .../jphoto.app/Contents/MacOS
+root="${here:h:h:h}"            # repo root (up: MacOS -> Contents -> jphoto.app -> root)
+cd "$root" || exit 1
+py="$root/.venv/bin/python"
+[[ -x "$py" ]] || py="python3"
+exec "$py" jphoto.py "$@"
