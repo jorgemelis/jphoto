@@ -15,3 +15,6 @@ state.json
 
 # macOS
 .DS_Store
+
+# Personal Spanish study notes — kept local, not published
+jphoto.md
